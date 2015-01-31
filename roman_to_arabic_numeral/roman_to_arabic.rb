@@ -1,4 +1,6 @@
 class RomanNumeral
+  attr_reader :number
+
   SYMBOLS = {
     'CM' => 900,
     'CD' => 400,
@@ -21,12 +23,12 @@ class RomanNumeral
 
   def to_arabic
     result = 0
-    while @number != ''
+    while number != ''
       SYMBOLS.each do |roman, arabic|
-        if @number.include? roman
-          @number.slice! roman
+        if number.include? roman
+          self.number.slice! roman
           result += SYMBOLS[roman]
-          return result += SYMBOLS[@number] unless SYMBOLS[@number].nil?
+          return result += SYMBOLS[number] unless SYMBOLS[number].nil?
         end
       end
     end
