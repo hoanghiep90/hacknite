@@ -4,25 +4,6 @@ require 'minitest/autorun'
 describe ArabicNumeral do
 
   it 'converts Arabic numerals to Roman numerals' do
-    special_symbols = {
-      1000 => 'M',
-      900 => 'CM',
-      500 => 'D',
-      400 => 'CD',
-      100 => 'C',
-      90 => 'XC',
-      50 => 'L',
-      40 => 'XL',
-      10 => 'X',
-      9 => 'IX',
-      5 => 'V',
-      4 => 'IV',
-      1 => 'I'
-    }
-    special_symbols.each do |key, value|
-      ArabicNumeral.new(key).to_roman.must_equal(value)
-    end
-
     ArabicNumeral.new(1).to_roman.must_equal('I')
     ArabicNumeral.new(2).to_roman.must_equal('II')
     ArabicNumeral.new(3).to_roman.must_equal('III')
