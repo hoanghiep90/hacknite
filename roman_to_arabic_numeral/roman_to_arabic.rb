@@ -17,8 +17,8 @@ class RomanNumeral
     'I' => 1
   }
 
-  def initialize(x)
-    @number = x
+  def initialize(roman)
+    @number = roman
   end
 
   def to_arabic
